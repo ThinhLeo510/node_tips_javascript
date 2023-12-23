@@ -1,0 +1,6 @@
+1. Define connect mongoose with old way
+2. Define connect mongoose with singleton
+3. Count numer of connection
+4. Check over load system
+5. Không cần disConnect liên tục như ở oracle
+6. PoolSize khi connect database => giúp tăng hiệu suất

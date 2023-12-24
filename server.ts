@@ -1,7 +1,8 @@
 import { app } from './src/app'
+import configDatabase from './src/configs/database.config'
 
-const server = app.listen(3055, () => {
-    console.log(`server listen port 3055`)
+const server = app.listen(configDatabase.app.port, () => {
+    console.log(`server listen port ${configDatabase.app.port}`)
 })
 
 process.on('SIGINT', () => {

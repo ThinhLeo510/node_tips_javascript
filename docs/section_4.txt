@@ -1,0 +1,2 @@
+1. Sử dụng config để set up môi trường 
+2. Sử dụng Config cho nhièu loại môi trường 

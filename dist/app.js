@@ -27,21 +27,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
+const compression_1 = __importDefault(require("compression"));
 const dotenv = __importStar(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const helmet_1 = __importDefault(require("helmet"));
-// import cors from 'cors'
 const morgan_1 = __importDefault(require("morgan"));
+const database_init_1 = __importDefault(require("./dbs/database.init"));
 dotenv.config();
 exports.app = (0, express_1.default)();
+// init package
 exports.app.use((0, morgan_1.default)('dev'));
 exports.app.use((0, helmet_1.default)());
+exports.app.use((0, compression_1.default)());
+// init database
+database_init_1.default;
 exports.app.get('/', (req, res, next) => {
     next();
     return res.status(200).json({
         message: 'welcome',
     });
 });
-// app.use(cors())
-// app.use(express.json())
 //# sourceMappingURL=app.js.map

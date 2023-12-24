@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
+import configDatabase from '../configs/database.config'
 
 dotenv.config()
 
@@ -11,7 +12,7 @@ class Database {
     }
 
     async connect() {
-        const connectString = `mongodb://${process.env.MONGOOSE_HOST}:${process.env.MONGOOSE_PORT}/${process.env.MONGOOSE_DATABASE}`
+        const connectString = `mongodb://${configDatabase.db.host}:${configDatabase.db.port}/${configDatabase.db.name}`
         await mongoose
             .connect(connectString)
             .then(() => console.log('connected successly!'))
@@ -19,7 +20,7 @@ class Database {
                 console.log(`connect failed with error: ${error}`)
             )
 
-        if (process.env.NODE_ENV == 'DEV') {
+        if (process.env.NODE_ENV == 'dev') {
             mongoose.set('debug', true)
             mongoose.set('debug', { color: true })
         }

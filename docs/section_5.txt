@@ -1,0 +1,2 @@
+1. privateKEy dùng để sign token, publicKey dùng để verify token
+2.  

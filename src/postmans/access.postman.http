@@ -1,0 +1,4 @@
+@host = http://localhost:3055/v1/api
+
+### signUp
+POST {{host}}/shop/signup
